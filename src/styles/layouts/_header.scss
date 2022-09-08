@@ -1,0 +1,66 @@
+@import "animate.css";
+
+.header-section {
+  h1 {
+    font-weight: 500;
+    font-size: 4.625rem;
+    line-height: 5.1875rem;
+    letter-spacing: -0.005em;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    max-width: 589px;
+    margin: 0 0 20px;
+    text-align: center;
+
+    animation: bounceIn;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+
+    @media screen and (max-width: 992px) {
+      text-align: left;
+    }
+  }
+
+  p {
+    font-size: 1.6875rem;
+    line-height: 112%;
+    letter-spacing: -0.005em;
+    margin: 10px 0 46px;
+  }
+
+  button {
+    background: linear-gradient(90deg, #F8DCE0 0%, #F5DDE7 11.66%, #EFDEEF 24%, #ECDFF5 35.75%, #E6E0FE 47.94%, #E9DFFF 58.39%, #ECDCFD 69.13%, #EFDAFC 80.01%, #F3D8FB 89.74%, #F5D6FA 100%);
+    border-radius: 11px;
+    border: none;
+    padding: 20px 31px;
+    color: #000000;
+    font-size: 1.375rem;
+    line-height: 112%;
+    letter-spacing: -0.005em;
+    filter: brightness(100%);
+    transition: filter .2s ease-in;
+
+    &:hover {
+      filter: brightness(92%);
+    }
+  }
+}
+
+.text-animate {
+  font-weight: 500;
+  font-size: 4.625rem;
+  line-height: 5.1875rem;
+  letter-spacing: -0.005em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn 1s .2s;
+  animation-fill-mode: forwards;
+  min-width: 10px;
+}
+
+@for $i from 1 through 35 {
+  .text-animate._#{$i} {
+    animation-delay: #{calc($i / 10)}s;
+  }
+}
